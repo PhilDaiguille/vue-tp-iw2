@@ -33,7 +33,7 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 1.6rem;
   text-align: center;
   margin-top: 2rem;
 }
@@ -76,7 +76,7 @@ nav a:first-of-type {
   nav {
     text-align: left;
     margin-left: -1rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
 
     padding: 1rem 0;
     margin-top: 1rem;
