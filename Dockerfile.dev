@@ -1,0 +1,15 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Copie des fichiers de dépendances
+COPY package*.json ./
+
+# Installation des dépendances
+RUN npm ci
+
+# Exposer le port utilisé par Vite (5173 par défaut)
+EXPOSE 5173
+
+# Configuration pour que Vite écoute toutes les interfaces réseau
+CMD ["npm", "run", "dev", "--", "--host"]

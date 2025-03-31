@@ -1,0 +1,23 @@
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: vue-app-dev
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev -- --host
+
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vue-app-prod
+    ports:
+      - '80:80'
+    restart: unless-stopped
